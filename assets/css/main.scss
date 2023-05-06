@@ -1,0 +1,12 @@
+// VARIAVEIS
+// MIXINS
+@mixin dis-flex($flex-direction: row, $justify-content: start, $align-items: stretch) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+//
+* {
+  transition: all cubic-bezier(0.075, 0.82, 0.165, 1) 0.4s;
+}

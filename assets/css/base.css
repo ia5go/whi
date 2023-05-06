@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+html:focus-within {
+  scroll-behavior: smooth;
+}
+:target {
+  scroll-margin-top: 30px;
+}
+a,
+button {
+  cursor: pointer;
+}
+a {
+  color: inherit;
+  text-decoration: none;
+}
+input,
+select,
+textarea {
+  outline: 0;
+}
+li,
+p,
+ul {
+  font-family: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  color: inherit;
+}
+b,
+strong {
+  font-family: inherit;
+  font-weight: 700;
+}
+.wrap {
+  /* TODO: */
+}
+.link-full {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 20;
+}

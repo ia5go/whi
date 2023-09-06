@@ -1,3 +1,7 @@
+html {
+  font-size: 16px;
+}
+
 body {
   width: 100vw;
   overflow-x: hidden;
@@ -8,6 +12,13 @@ body {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+}
+.header__nav__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-items: center;
+  gap: 0.75rem;
 }
 .header__logo {
   height: 80px;
@@ -21,6 +32,7 @@ body {
   -o-object-position: center;
      object-position: center;
 }
+
 .banner {
   position: relative;
   width: 100%;

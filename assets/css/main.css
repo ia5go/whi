@@ -7,13 +7,13 @@ body {
   overflow-x: hidden;
 }
 
-.highlights, .stack {
+.contact, .highlights, .stack {
   padding: 4.25rem 2vw;
 }
-.highlights:nth-of-type(even), .stack:nth-of-type(even) {
+.contact:nth-of-type(even), .highlights:nth-of-type(even), .stack:nth-of-type(even) {
   background-color: rgba(230, 230, 230, 0.5);
 }
-.highlights__header, .stack__header {
+.contact__header, .highlights__header, .stack__header {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -21,7 +21,7 @@ body {
   gap: 0.5rem;
   margin-bottom: 2.5rem;
 }
-.highlights__header__title, .stack__title {
+.contact__header__title, .highlights__header__title, .stack__title {
   font-family: "Roboto", sans-serif;
   font-size: 3.5rem;
   font-weight: 700;
@@ -171,6 +171,7 @@ body {
 .highlights {
   padding-left: 0;
   padding-right: 0;
+  padding-bottom: 0;
 }
 .highlights__main {
   display: flex;
@@ -243,4 +244,59 @@ body {
      object-fit: contain;
   -o-object-position: center left;
      object-position: center left;
+}
+
+.contact {
+  pad: 6rem 2rem;
+}
+.contact__header {
+  margin-bottom: 3rem;
+}
+.contact__header__title {
+  color: #252222;
+  font-weight: 300;
+}
+.contact__main {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: stretch;
+}
+.contact__list {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+}
+.contact__list__item {
+  height: auto;
+  width: 5rem;
+  padding: 0.5rem 0.8rem;
+  aspect-ratio: 1/1;
+  position: relative;
+  border-radius: 1rem;
+  transition: all ease 0.3s;
+}
+.contact__list__item:hover {
+  background-color: #1fad90;
+  transition: all ease-in 0.3s;
+}
+.contact__list__item:hover img {
+  transition: all ease 0.2s;
+  filter: brightness(0) saturate(100%) invert(99%) sepia(2%) saturate(805%) hue-rotate(201deg) brightness(117%) contrast(80%);
+}
+.contact__list__item a {
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+.contact__list__item img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  transition: all ease 0.2s;
 }/*# sourceMappingURL=main.css.map */

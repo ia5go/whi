@@ -1,16 +1,25 @@
 // VARIAVEIS
-$font-primary: "Roboto", sans-serif;
+@font-face {
+  font-family: "Champ";
+  src: url("/assets/fonts/Champ-Black.eot");
+  src: url("/assets/fonts/CHAMP-BLACK.TTF") format("ttf"), url("/assets/fonts/Champ-Black.woff"),
+    url("/assets/fonts/Champ-Black.woff2");
+  font-display: swap;
+}
+
+$font-champ: "Champ", sans-serif;
+$font-montserrat: "Montserrat", sans-serif;
 
 $color-one: #1fad90;
-$color-two: #4db851;
+$color-two: #f89623;
 $color-three: #e32026;
 $color-four: #f89623;
 $color-five: #e6e6e6;
 
-$color-black: #252222;
-$color-white: #fff;
+$color-black: #171717;
+$color-white: #f6f6f6;
 
-$section-bg: $color-five;
+$section-bg: $color-white;
 // MIXINS
 @mixin dis-flex($direction: row, $justify: start, $align: stretch) {
   display: flex;
@@ -33,6 +42,7 @@ html {
 body {
   width: 100vw;
   overflow-x: hidden;
+  font-family: "Champ", sans-serif;
 }
 
 // PADRÕES A SEREM HERDADOS
@@ -51,18 +61,36 @@ body {
     }
 
     &__title {
-      font-family: $font-primary;
+      font-family: $font-champ;
       font-size: 3.5rem;
-      font-weight: 700;
-      color: $color-one;
-      text-align: center;
+      font-weight: 900;
+      color: $color-white;
+      text-align: left;
+
+      span {
+        color: $color-one;
+      }
     }
+  }
+
+  &-cta {
+    @include dis-flex;
+    gap: 20px;
+
+    font-family: $font-montserrat;
+    font-weight: 500;
+    font-size: 0.975rem;
+    color: $color-two;
+
+    border: solid 1px $color-two;
+    border-radius: 40px;
+    padding: 14px 24px;
   }
 }
 
 //HOME
 .header {
-  padding: 22px 2vw;
+  padding: 22px 5%;
   position: relative;
   z-index: 5;
 
@@ -71,21 +99,22 @@ body {
 
     &__list {
       @include dis-flex($justify: end, $align: center);
-      gap: 1.5rem;
+      gap: 4.5rem;
 
       &__item {
         a {
-          font-family: $font-primary;
+          opacity: 0.8;
+          font-family: $font-montserrat;
           font-size: 1rem;
           font-weight: 500;
-          color: $color-black;
+          color: $color-white;
           transition: all ease 0.3s;
 
           position: relative;
 
           &::before {
             content: "";
-            background-color: $color-four;
+            background-color: $color-one;
             opacity: 0;
             border-radius: 6px 6px 0 0;
             height: 4px;
@@ -98,7 +127,7 @@ body {
 
           &:hover {
             transition: all ease-out 0.3s;
-            color: $color-four;
+            color: $color-one;
 
             &::before {
               transition: all ease-out 0.4s;
@@ -113,8 +142,8 @@ body {
   }
 
   &__logo {
-    height: 80px;
-    width: 200px;
+    width: 101px;
+    height: 91px;
 
     img {
       @include objConfig($fit: contain);
@@ -125,7 +154,7 @@ body {
 .main {
   position: relative;
   z-index: 2;
-  margin-top: -124px;
+  margin-top: -135px;
 
   .splide__pagination {
     bottom: -3rem;
@@ -148,11 +177,14 @@ body {
   width: 100%;
 
   &__item {
+    @include dis-flex($align: end, $justify: space-between);
     position: relative;
+    background-color: $color-black;
     height: 100vh;
     width: 100vw;
+    padding: 94px 5% 0 5%;
 
-    img {
+    &__background {
       position: absolute;
       inset: 0;
       z-index: 1;
@@ -164,19 +196,53 @@ body {
   }
 
   &__content {
-    @include dis-flex($align: center);
+    @include dis-flex($direction: column, $justify: center);
     position: relative;
     z-index: 5;
     height: 100%;
-    width: 100%;
-    padding: 5%;
+    width: 50%;
   }
 
   &__title {
-    font-family: $font-primary;
-    font-weight: 700;
-    font-size: 3.25rem;
-    color: $color-five;
+    font-family: $font-champ;
+    font-weight: 900;
+    font-size: 4rem;
+    line-height: 99%;
+    letter-spacing: 1.625px;
+    text-transform: uppercase;
+    color: $color-white;
+
+    margin-bottom: 1.75rem;
+
+    span {
+      color: $color-one;
+    }
+  }
+
+  &__description {
+    font-family: $font-montserrat;
+    font-weight: 400;
+    font-size: 0.9375rem;
+    line-height: 150%;
+    color: $color-white;
+
+    opacity: 0.8;
+
+    width: 100%;
+    max-width: 310px;
+    margin-bottom: 2.5rem;
+  }
+
+  &__cta {
+    @extend %main-cta;
+    align-self: start;
+  }
+
+  &__overlay {
+    width: 38%;
+    max-height: calc(100vh - 94px);
+    object-fit: contain;
+    object-position: bottomcenter;
   }
 }
 
@@ -242,7 +308,7 @@ body {
     }
 
     &__title {
-      font-family: $font-primary;
+      font-family: $font-champ;
       font-size: 4rem;
       font-weight: 700;
       color: $color-black;
@@ -272,7 +338,7 @@ body {
       padding-left: 1rem;
       margin-bottom: 1.25rem;
 
-      font-family: $font-primary;
+      font-family: $font-champ;
       font-size: 1rem;
       font-weight: 400;
       color: $color-black;
@@ -381,7 +447,7 @@ body {
       gap: 1.5rem;
 
       &__title {
-        font-family: $font-primary;
+        font-family: $font-champ;
         font-size: 1.2rem;
         font-weight: 400;
         color: $color-black;
@@ -389,7 +455,7 @@ body {
 
       &__item {
         a {
-          font-family: $font-primary;
+          font-family: $font-champ;
           font-size: 1rem;
           font-weight: 300;
           color: $color-black;
@@ -431,14 +497,14 @@ body {
     gap: 1.5rem;
 
     &__title {
-      font-family: $font-primary;
+      font-family: $font-champ;
       font-size: 1.2rem;
       font-weight: 400;
       color: $color-black;
     }
 
     &__mailto {
-      font-family: $font-primary;
+      font-family: $font-champ;
       font-size: 1rem;
       font-weight: 300;
       color: $color-black;

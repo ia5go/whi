@@ -34,19 +34,48 @@ $section-bg: $color-white;
   object-fit: $fit;
   object-position: $position;
 }
-// PADRÕES
-html {
-  font-size: 16px;
+
+// responsive
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Breakpoints down
+@mixin small-device-down {
+  @media (max-width: #{map-get($grid-breakpoints, 'sm') - .02px}) {
+    @content;
+  }
 }
 
-body {
-  width: 100vw;
-  overflow-x: hidden;
-  font-family: "Champ", sans-serif;
+@mixin medium-device-down {
+  @media (max-width: #{map-get($grid-breakpoints, 'md') - .02px}) {
+    @content;
+  }
 }
 
+@mixin large-device-down {
+  @media (max-width: #{map-get($grid-breakpoints, 'lg') - .02px}) {
+    @content;
+  }
+}
+
+@mixin x-large-device-down {
+  @media (max-width: #{map-get($grid-breakpoints, 'xl') - .02px}) {
+    @content;
+  }
+}
+@mixin xx-large-device-down {
+  @media (max-width: #{map-get($grid-breakpoints, 'xxl') - .02px}) {
+    @content;
+  }
+}
 // PADRÕES A SEREM HERDADOS
-%main {
+%theme {
   &-section {
     padding: 4.25rem 2vw;
 
@@ -88,57 +117,30 @@ body {
   }
 }
 
+html {
+  font-size: 16px;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  font-family: "Champ", sans-serif;
+  background-color: $color-black;
+}
+
 //HOME
 .header {
   padding: 22px 5%;
   position: relative;
   z-index: 5;
 
+  @include small-device-down() {
+    padding-top: 2rem;
+  }
+
   &__nav {
-    @include dis-flex($justify: space-between, $align: center);
-
-    &__list {
-      @include dis-flex($justify: end, $align: center);
-      gap: 4.5rem;
-
-      &__item {
-        a {
-          opacity: 0.8;
-          font-family: $font-montserrat;
-          font-size: 1rem;
-          font-weight: 500;
-          color: $color-white;
-          transition: all ease 0.3s;
-
-          position: relative;
-
-          &::before {
-            content: "";
-            background-color: $color-one;
-            opacity: 0;
-            border-radius: 6px 6px 0 0;
-            height: 4px;
-            width: 0;
-            transition: all ease 0.4s;
-            position: absolute;
-            left: 50%;
-            bottom: -12px;
-          }
-
-          &:hover {
-            transition: all ease-out 0.3s;
-            color: $color-one;
-
-            &::before {
-              transition: all ease-out 0.4s;
-              opacity: 1;
-              width: 100%;
-              left: 0;
-            }
-          }
-        }
-      }
-    }
+    @include dis-flex($justify: space-between);
   }
 
   &__logo {
@@ -149,6 +151,38 @@ body {
       @include objConfig($fit: contain);
     }
   }
+
+  &__contact {
+    @include dis-flex($align: start, $justify: end);
+    gap: 1.25rem;
+    display: none;
+
+    @include small-device-down() {
+      display: flex;
+    }
+
+    &__item {
+      height: auto;
+      width: 1.25rem;
+      aspect-ratio: 1/1;
+      transition: all ease 0.4s;
+
+      &:hover {
+        scale: 1.1;
+      }
+
+      a {
+        @include dis-flex;
+        height: 100%;
+        width: 100%;
+      }
+
+      img {
+        @include objConfig($fit: contain);
+        transition: all ease 0.4s;
+      }
+    }
+  }
 }
 
 .main {
@@ -156,42 +190,52 @@ body {
   z-index: 2;
   margin-top: -135px;
 
-  .splide__pagination {
-    bottom: -3rem;
-    &__page {
-      height: 1rem;
-      width: 1rem;
-      background-color: $color-four;
-      opacity: 0.4;
-
-      &.is-active {
-        opacity: 1;
-        transform: scale(1);
-      }
-    }
+  @include small-device-down() {
+    margin-top: -145px;
   }
 }
 
 .banner {
+  @include dis-flex($align: end, $justify: space-between);
   position: relative;
-  width: 100%;
+  background-color: $color-black;
+  height: 100vh;
+  width: 100vw;
+  padding: 94px 5% 20vh 5%;
+  overflow: hidden;
 
-  &__item {
-    @include dis-flex($align: end, $justify: space-between);
-    position: relative;
-    background-color: $color-black;
-    height: 100vh;
-    width: 100vw;
-    padding: 94px 5% 0 5%;
+  @include large-device-down() {
+    align-items: center;
+  }
 
-    &__background {
-      position: absolute;
-      inset: 0;
-      z-index: 1;
-      height: 100%;
-      width: 100%;
-      object-fit: cover;
-      object-position: center;
+  @include small-device-down() {
+    align-items: start;
+  }
+
+  &__background {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    @include objConfig;
+
+    @include large-device-down() {
+      object-position: left top;
+    }
+
+    @include small-device-down() {
+      object-position: center top;
+    }
+
+    img {
+      @include objConfig;
+
+      @include large-device-down() {
+        object-position: left top;
+      }
+
+      @include small-device-down() {
+        object-position: center top;
+      }
     }
   }
 
@@ -199,343 +243,88 @@ body {
     @include dis-flex($direction: column, $justify: center);
     position: relative;
     z-index: 5;
-    height: 100%;
+    height: 60vh;
     width: 50%;
+
+    @include large-device-down() {
+      height: 40vh;
+    }
+
+    @include small-device-down() {
+      width: 100%;
+      height: 32vh;
+    }
   }
 
   &__title {
     font-family: $font-champ;
+    font-size: 2.5rem;
     font-weight: 900;
-    font-size: 4rem;
-    line-height: 99%;
+    line-height: 97%;
     letter-spacing: 1.625px;
     text-transform: uppercase;
     color: $color-white;
 
-    margin-bottom: 1.75rem;
+    @include large-device-down() {
+      font-size: 1.5rem;
+      line-height: 110%;
+    }
 
     span {
+      font-size: 3.3rem;
+      line-height: 130%;
+      letter-spacing: 1.25px;
       color: $color-one;
-    }
-  }
 
-  &__description {
-    font-family: $font-montserrat;
-    font-weight: 400;
-    font-size: 0.9375rem;
-    line-height: 150%;
-    color: $color-white;
-
-    opacity: 0.8;
-
-    width: 100%;
-    max-width: 310px;
-    margin-bottom: 2.5rem;
-  }
-
-  &__cta {
-    @extend %main-cta;
-    align-self: start;
-  }
-
-  &__overlay {
-    width: 38%;
-    max-height: calc(100vh - 94px);
-    object-fit: contain;
-    object-position: bottomcenter;
-  }
-}
-
-.stack {
-  position: relative;
-  @extend %main-section;
-  &__header {
-    @extend %main-section__header-center;
-  }
-
-  &__title {
-    @extend %main-section__title;
-  }
-
-  &__carousel {
-    position: relative;
-    margin-bottom: 3rem;
-  }
-
-  &__item {
-    height: 140px;
-    width: 140px;
-
-    img {
-      @include objConfig($fit: contain);
-    }
-  }
-}
-
-.highlights {
-  @extend %main-section;
-  padding-left: 0;
-  padding-right: 0;
-  padding-bottom: 0;
-
-  &__header {
-    @extend %main-section__header-center;
-
-    &__title {
-      @extend %main-section__title;
-    }
-  }
-
-  &__main {
-    @include dis-flex($direction: column);
-  }
-
-  &__item {
-    @include dis-flex($justify: space-between, $align: center);
-    padding: 2.5rem 2vw;
-    background-image: linear-gradient(-45deg, $color-four -150%, transparent 60%);
-
-    // linear-gradient(45deg, #f89623 -150%, transparent 66%)
-
-    &:nth-of-type(even) {
-      background-image: linear-gradient(45deg, $color-four -150%, transparent 60%);
-      flex-direction: row-reverse;
-    }
-
-    &__text-group {
-      width: 48%;
-      height: auto;
-    }
-
-    &__title {
-      font-family: $font-champ;
-      font-size: 4rem;
-      font-weight: 700;
-      color: $color-black;
-      text-align: left;
-
-      position: relative;
-      padding-left: 1rem;
-      margin-bottom: 1.25rem;
-      max-width: 430px;
-
-      &::before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        left: 0px;
-        top: 0px;
-        width: 6px;
-        height: 100%;
-        border-radius: 6px;
-        background-color: $color-one;
-      }
-    }
-
-    &__description {
-      width: 100%;
-      position: relative;
-      padding-left: 1rem;
-      margin-bottom: 1.25rem;
-
-      font-family: $font-champ;
-      font-size: 1rem;
-      font-weight: 400;
-      color: $color-black;
-      text-align: left;
-      line-height: 160%;
-
-      p {
-        font-family: inherit;
-        font-size: inherit;
-        font-weight: inherit;
-        color: inherit;
-        text-align: inherit;
-      }
-    }
-
-    &__image {
-      width: 48%;
-      height: auto;
-      max-height: 100vh;
-      object-fit: contain;
-      object-position: center left;
-    }
-  }
-}
-
-.contact {
-  @extend %main-section;
-  pad: 6rem 2rem;
-
-  &__header {
-    @extend %main-section__header-center;
-    margin-bottom: 3rem;
-
-    &__title {
-      @extend %main-section__title;
-      color: $color-black;
-      font-weight: 300;
-    }
-  }
-
-  &__main {
-    @include dis-flex($direction: column);
-  }
-
-  &__list {
-    @include dis-flex($justify: center);
-    gap: 1rem;
-
-    &__item {
-      height: auto;
-      width: 5rem;
-      padding: 0.5rem 0.8rem;
-      aspect-ratio: 1/1;
-      position: relative;
-      border-radius: 1rem;
-      transition: all ease 0.3s;
-
-      &:hover {
-        background-color: $color-one;
-        transition: all ease-in 0.3s;
-
-        img {
-          transition: all ease 0.2s;
-          filter: brightness(0) saturate(100%) invert(99%) sepia(2%) saturate(805%) hue-rotate(201deg) brightness(117%)
-            contrast(80%);
-        }
-      }
-
-      a {
-        height: 100%;
-        width: 100%;
-        position: relative;
-      }
-
-      img {
-        @include objConfig($fit: contain);
-        transition: all ease 0.2s;
+      @include large-device-down() {
+        font-size: 1.9rem;
+        line-height: 200%;
       }
     }
   }
 }
 
 .footer {
-  @extend %main-section;
+  margin-top: -20vh;
+  height: 20vh;
+  position: relative;
+  z-index: 5;
+  padding: 0 5%;
 
-  &__main {
-    @include dis-flex($justify: space-between);
-    gap: 2rem;
+  @include large-device-down() {
+    margin-top: -42vh;
   }
 
-  &__logo {
-    height: auto;
-    width: 300px;
-    aspect-ratio: 1/1;
-
-    img {
-      @include objConfig($fit: contain);
-    }
+  @include small-device-down() {
+    display: none;
   }
 
   &__nav {
-    @include dis-flex($justify: space-between, $align: start);
+    @include dis-flex();
 
     &__list {
-      @include dis-flex($direction: column, $justify: end, $align: center);
+      @include dis-flex($align: center);
       gap: 1.5rem;
 
-      &__title {
-        font-family: $font-champ;
-        font-size: 1.2rem;
-        font-weight: 400;
-        color: $color-black;
-      }
-
       &__item {
-        a {
-          font-family: $font-champ;
-          font-size: 1rem;
-          font-weight: 300;
-          color: $color-black;
-          transition: all ease 0.3s;
-
-          position: relative;
-
-          &::before {
-            content: "";
-            background-color: $color-four;
-            opacity: 0;
-            border-radius: 4px;
-            height: 2px;
-            width: 0;
-            transition: all ease 0.4s;
-            position: absolute;
-            left: 50%;
-            bottom: -8px;
-          }
-
-          &:hover {
-            transition: all ease-out 0.3s;
-            color: $color-four;
-
-            &::before {
-              transition: all ease-out 0.4s;
-              opacity: 1;
-              width: 100%;
-              left: 0;
-            }
-          }
-        }
-      }
-    }
-  }
-
-  &__contact {
-    @include dis-flex($direction: column, $align: center);
-    gap: 1.5rem;
-
-    &__title {
-      font-family: $font-champ;
-      font-size: 1.2rem;
-      font-weight: 400;
-      color: $color-black;
-    }
-
-    &__mailto {
-      font-family: $font-champ;
-      font-size: 1rem;
-      font-weight: 300;
-      color: $color-black;
-      text-align: center;
-
-      transition: all ease 0.3s;
-
-      position: relative;
-
-      &::before {
-        content: "";
-        background-color: $color-four;
-        opacity: 0;
-        border-radius: 4px;
-        height: 2px;
-        width: 0;
+        height: auto;
+        width: 1.5rem;
+        aspect-ratio: 1/1;
         transition: all ease 0.4s;
-        position: absolute;
-        left: 50%;
-        bottom: -8px;
-      }
 
-      &:hover {
-        transition: all ease-out 0.3s;
-        color: $color-four;
+        &:hover {
+          scale: 1.1;
+        }
 
-        &::before {
-          transition: all ease-out 0.4s;
-          opacity: 1;
+        a {
+          @include dis-flex;
+          height: 100%;
           width: 100%;
-          left: 0;
+        }
+
+        img {
+          @include objConfig($fit: contain);
+          transition: all ease 0.4s;
         }
       }
     }

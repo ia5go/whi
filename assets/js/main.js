@@ -1,4 +1,4 @@
-new Splide(document.querySelector(".banner"), {
+new Splide(document.querySelector(".mdl-banner"), {
   type: "loop",
   autoWidth: true,
   autoHeight: true,

@@ -1,0 +1,36 @@
+@use "utilities/variables" as v;
+@use "utilities/mixins" as m;
+@use "theme";
+
+html {
+  font-size: 15px;
+
+  @include m.small-device-down {
+    font-size: 14px;
+  }
+}
+
+body {
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+
+  .splide__pagination {
+    bottom: -3rem;
+    &__page {
+      height: 1rem;
+      width: 1rem;
+      background-color: v.$color-four;
+      opacity: 0.4;
+
+      &.is-active {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}

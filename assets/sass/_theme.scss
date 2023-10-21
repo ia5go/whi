@@ -19,11 +19,11 @@
       font-size: 3.3rem;
     }
 
-    &--sp-white {
+    &--spn-white {
       @extend %theme-ttl;
 
       span {
-        color: v.$color-white;
+        color: #fff;
       }
     }
   }
@@ -32,7 +32,7 @@
     font-family: v.$montserrat;
     font-size: 1rem;
     font-weight: 400;
-    line-height: normal;
+    line-height: 160%;
     color: v.$color-five;
 
     position: relative;

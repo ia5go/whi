@@ -34,3 +34,9 @@ body {
     }
   }
 }
+
+.btn-mn-mbl {
+  @include m.medium-device-down {
+    display: flex;
+  }
+}

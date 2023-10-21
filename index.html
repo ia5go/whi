@@ -8,237 +8,287 @@
     <meta name="copyright" content="Direitos reservados WHI" />
     <meta name="title" content="WHI - WEB DE ALTA INSPIRAÇÃO" />
     <meta name="author" content="WHI" />
-    <meta name="description" content="" />
+    <meta
+      name="description"
+      content="Olá, você chegou à WHI - A galera que manda bem na criação de sites e marketing digital! A gente pega as suas ideias e faz acontecer na web. Vem descobrir como turbinar sua presença online agora mesmo!"
+    />
     <meta name="keywords" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- METAS DO FACEBOOK COMPARTILHAR -->
     <meta property="og:url" content="https://whi.dev.br" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="WHI - WEB DE ALTA INSPIRAÇÃO" />
-    <meta property="og:description" content="" />
+    <meta
+      property="og:description"
+      content="Olá, você chegou à WHI - A galera que manda bem na criação de sites e marketing digital! A gente pega as suas ideias e faz acontecer na web. Vem descobrir como turbinar sua presença online agora mesmo!"
+    />
     <meta property="og:image" content="assets/images/logo.svg" />
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="assets/images/logo.svg" />
+    <link rel="shortcut icon" href="assets/images/favicon.svg" />
 
-    <!-- default -->
-    <link rel="stylesheet" href="assets/css/reset.min.css" />
-    <link rel="stylesheet" href="assets/css/base.css" />
     <!-- plugins -->
     <link rel="stylesheet" href="assets/css/splide.min.css" />
-    <!-- fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="stylesheet" href="assets/css/sandwich.menu.css" />
 
-    <link rel="stylesheet" href="assets/css/main.css" />
+    <link rel="stylesheet" href="assets/sass/app.css" />
   </head>
 
   <body>
-    <header class="header wrap-fluid">
-      <nav class="header__nav">
-        <a href="#banner" class="header__logo"><img src="assets/images/logo.svg" alt="Logo WHI" /></a>
+    <header class="mdl-header wrap-fluid">
+      <nav class="mdl-header__nav">
+        <a href="#banner" class="mdl-header__logo"><img src="assets/images/logo.svg" alt="Logo WHI" /></a>
 
-        <ul class="header__nav__list">
-          <li class="header__nav__list__item"><a href="#stack">Tecnologias</a></li>
-          <li class="header__nav__list__item"><a href="#highlights">Destaques</a></li>
-          <li class="header__nav__list__item"><a href="#portfolio">Projetos</a></li>
-          <li class="header__nav__list__item"><a href="#contact">Contato</a></li>
+        <ul class="mdl-header__nav__list">
+          <li class="mdl-header__nav__list__item"><a href="#about">WHI</a></li>
+          <li class="mdl-header__nav__list__item"><a href="#stack">Tecnologias</a></li>
+          <!-- <li class="mdl-header__nav__list__item"><a href="#portfolio">Projetos</a></li> -->
+          <li class="mdl-header__nav__list__item"><a href="#content">O que fazemos</a></li>
+          <li class="mdl-header__nav__list__item"><a href="#contact">Contato</a></li>
         </ul>
+
+        <!-- Esse btn vai no header -->
+        <button class="btn-mn-mbl bars">
+          <div class="icon"></div>
+        </button>
       </nav>
     </header>
 
+    <!-- Sidebar -->
+    <div id="menu-mobile" class="sidebar">
+      <nav class="inside">
+        <div class="engloba-sidebar">
+          <ul>
+            <div id="a-mb-close" class="btn-mb">X</div>
+            <div class="logo">
+              <img src="assets/images/logo.svg" alt="Logo" /></a>
+            </div>
+            <ul class="sidebarlinks">
+              <li><a href="#about">WHI</a></li>
+              <li><a href="#stack">Tecnologias</a></li>
+              <!-- <li><a href="#portfolio">Projetos</a></li> -->
+              <li><a href="#content">O que fazemos</a></li>
+              <li><a href="#contact">Contato</a></li>
+            </ul>
+            <!-- END .sidebar__links -->
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <!-- FIM SIDEBAR -->
+
     <main class="main">
-      <section id="banner" class="banner splide">
+      <section id="banner" class="mdl-banner splide">
         <div class="splide__track">
           <ul class="splide__list">
-            <li class="splide__slide banner__item">
-              <!-- <picture>
-                <source media="(max-width: 720px)" srcset="assets/images/banner-mobile.png" />
-                <img src="assets/images/banner.png" alt="Banner" />
-              </picture> -->
+            <li class="splide__slide mdl-banner__item">
+              <div class="mdl-banner__content">
+                <h1 class="mdl-banner__title">Criando sites de alto <span>impacto.</span></h1>
 
-              <div class="banner__content">
-                <h1 class="banner__title">Criando sites de alto <span>impacto.</span></h1>
-
-                <div class="banner__description">
-                  <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non libero felis. Nullam posuere enim
-                    vitae
-                  </p>
+                <div class="mdl-banner__description">
+                  <p>Bem vindo ao novo, somos a agência de desenvolvimento web mais moderna que você conhecerá</p>
                 </div>
 
-                <a href="#contacts" class="banner__cta"
-                  >Faça um Orçamento
-                  <img src="/assets/images/cta-arrow-orange.svg" alt="ceta" />
-                </a>
+                <a href="#contact" class="mdl-banner__cta">quero meu projeto </a>
               </div>
 
-              <img src="assets/images/banner01-right.png" class="banner__overlay" alt="homem com table" />
+              <img src="assets/images/banner01-right.png" class="mdl-banner__overlay" alt="homem com table" />
             </li>
           </ul>
         </div>
       </section>
 
-      <section id="services" class="services">
-        <div class="services__left">
-          <div class="service__item">
-            <img src="" alt="" class="service__item__bg" />
-            <h3 class="servic__item__title"></h3>
-            <p class="servic__item__desc"></p>
-          </div>
-        </div>
-
-        <div class="services__right">
-          <h2 class="services__title"></h2>
-          <div class="services__text"></div>
-          <ul class="services__socials">
-            <li class="services__socials__item"></li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="stack" class="stack">
-        <header class="stack__header">
-          <h2 class="stack__title">Tecnologias</h2>
-          <h3 class="stack__subtitle"></h3>
-        </header>
-
-        <main class="splide stack__carousel">
+      <section id="stack" class="mdl-stack">
+        <main class="splide mdl-stack__slider">
           <div class="splide__track">
             <ul class="splide__list">
-              <!-- TODO: PEGAR ICONES DAS LINGUAGENS QUE USAMOS PADRONIZADOS -->
-              <li class="splide__slide stack__item">
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-figma.svg" alt="figma" />
+              </li>
+
+              <li class="splide__slide mdl-stack__item">
                 <img src="assets/images/icon-html.svg" alt="html" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-css.svg" alt="css" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-js.svg" alt="js" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-jquery.svg" alt="jquery" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-bs.svg" alt="bootstrap" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-php.svg" alt="php" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-laravel.svg" alt="laravel" />
               </li>
-              <li class="splide__slide stack__item">
-                <img src="assets/images/icon-html.svg" alt="html" />
+
+              <li class="splide__slide mdl-stack__item">
+                <img src="assets/images/icon-sql.svg" alt="sql" />
               </li>
             </ul>
           </div>
         </main>
       </section>
 
-      <section id="highlights" class="highlights">
-        <header class="highlights__header">
-          <h2 class="highlights__header__title">Projetos</h2>
-          <h3 class="highlights__header__subtitle"></h3>
-        </header>
+      <section id="about" class="mdl-about">
+        <div class="mdl-about__top">
+          <h2 class="mdl-about__title">Porque confiar na <span>whi</span></h2>
 
-        <main class="highlights__main">
-          <!-- lista odd-even (text/img) -->
+          <div class="mdl-about__text">
+            <p>
+              Confie na gente para transformar sua marca em uma experiência digital incrível. Nossa agência une
+              criatividade, tecnologia e compromisso para construir sua presença online de forma inovadora e impactante.
+            </p>
+          </div>
 
-          <article class="highlights__item">
-            <div class="highlights__item__text-group">
-              <h3 class="highlights__item__title">Coesa Engenharia</h3>
-              <div class="highlights__item__description">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet aspernatur labore et
-                  dignissimos cupiditate quia eaque exercitationem, dolorem nulla obcaecati non officia in vitae
-                  voluptatem sequi dolore, eligendi consequatur!
-                </p>
-              </div>
+          <a href="#contact" class="mdl-about__cta">quero meu projeto</a>
+        </div>
+
+        <div class="mdl-about__topics">
+          <div class="mdl-about__topics__item">
+            <div class="mdl-about__topics__item__top">
+              <img src="assets/images/about1.svg" alt="Selo de qualidade" class="mdl-about__topics__item__icon" />
+              <h3 class="mdl-about__topics__item__title">Serviço de qualidade</h3>
             </div>
-
-            <img src="assets/images/coesa-s.png" alt="Site coesa.com.br" class="highlights__item__image" />
-          </article>
-
-          <article class="highlights__item">
-            <div class="highlights__item__text-group">
-              <h3 class="highlights__item__title">Obras Sociais Irmã Dulce</h3>
-              <div class="highlights__item__description">
-                <p>
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eveniet aspernatur labore et
-                  dignissimos cupiditate quia eaque exercitationem, dolorem nulla obcaecati non officia in vitae
-                  voluptatem sequi dolore, eligendi consequatur!
-                </p>
-              </div>
+            <div class="mdl-about__topics__item__description">
+              <p>Com os melhores desenvolvedores, transformamos qualquer ideia em realidade digital.</p>
             </div>
+          </div>
 
-            <img src="assets/images/irmadulce-s.png" alt="Site coesa.com.br" class="highlights__item__image" />
-          </article>
-        </main>
+          <div class="mdl-about__topics__item">
+            <div class="mdl-about__topics__item__top">
+              <img src="assets/images/about2.svg" alt="Fone com microfone" class="mdl-about__topics__item__icon" />
+              <h3 class="mdl-about__topics__item__title">Atendimento único</h3>
+            </div>
+            <div class="mdl-about__topics__item__description">
+              <p>Nada de dividir a atenção, se estamos com você na casa, seu atendimento é a nossa prioridade</p>
+            </div>
+          </div>
+
+          <div class="mdl-about__topics__item">
+            <div class="mdl-about__topics__item__top">
+              <img src="assets/images/about3.svg" alt="Cara feliz" class="mdl-about__topics__item__icon" />
+              <h3 class="mdl-about__topics__item__title">Satisfação Garantida</h3>
+            </div>
+            <div class="mdl-about__topics__item__description">
+              <p>Só te entregamos o projeto caso esteja feliz pelo que fizemos.</p>
+            </div>
+          </div>
+        </div>
       </section>
 
-      <!-- <section id="portfolio" class="portfolio">
-        <header class="portfolio__header">
-          <h2 class="portifolio__header__title">Portfolio</h2>
-          <h3 class="portfolio__header__subtitle"></h3>
-        </header>
+      <section id="content" class="mdl-content">
+        <h2 class="mdl-content__title">o que <br /><span>desenvolvemos</span></h2>
 
-      </section> -->
-      <!-- TODO: DEFINIR COMO VAI SER O PORTFOLIO -->
+        <article class="mdl-content__item">
+          <div class="mdl-content__item__left">
+            <h3 class="mdl-content__item__title"><span>sITE GERENCIÁVEL</span></h3>
 
-      <section id="contact" class="contact">
-        <header class="contact__header">
-          <h2 class="contact__header__title">Contato</h2>
-        </header>
+            <div class="mdl-content__item__text">
+              <p>
+                Acreditamos que a gestão do seu site deve ser tão fácil quanto inspirar sua audiência. Desenvolvemos
+                sites gerenciáveis integrados a sistemas intuitivos de administração, permitindo que você tenha controle
+                total com apenas alguns cliques. Nossa abordagem combina tecnologia avançada com simplicidade,
+                proporcionando uma experiência de administração sem esforço.
+              </p>
+            </div>
+          </div>
 
-        <main class="contact__main">
-          <ul class="contact__list">
-            <li class="contact__list__item">
-              <a href="mailto:hosana.cmc@gmail.com" target="_blank"
-                ><img src="assets/images/icon-email.svg" alt="Ícone de email"
-              /></a>
-            </li>
+          <img src="assets/images/content1.png" alt="Site gerenciável" class="mdl-content__item__image" />
+        </article>
 
-            <li class="contact__list__item">
-              <a href="https://api.whatsapp.com/send?phone=557192830036" target="_blank"
-                ><img src="assets/images/icon-wpp.svg" alt="Ícone de whatsapp"
-              /></a>
-            </li>
-          </ul>
-        </main>
+        <article class="mdl-content__item">
+          <div class="mdl-content__item__left">
+            <h3 class="mdl-content__item__title"><span>Landing Pages</span></h3>
+
+            <div class="mdl-content__item__text">
+              <p>
+                Transformamos ideias em conversões com nossas landing pages otimizadas para o Google. Utilizando
+                técnicas avançadas de SEO e design inovadores, criamos páginas que não apenas atraem tráfego
+                qualificado, mas também convertem visitantes em clientes.
+              </p>
+            </div>
+          </div>
+
+          <img src="assets/images/content2.png" alt="Landing Pages" class="mdl-content__item__image" />
+        </article>
+
+        <article class="mdl-content__item">
+          <div class="mdl-content__item__left">
+            <h3 class="mdl-content__item__title"><span>loja virtual</span></h3>
+
+            <div class="mdl-content__item__text">
+              <p>
+                Transformamos conceitos em realidade, por isso somos inspirados na criação de identidades visuais,
+                papelaria e peças publicitárias. Combinamos criatividade e estratégia para desenvolver logotipos
+                distintos de acordo com o que você imagina.
+              </p>
+            </div>
+          </div>
+
+          <img src="assets/images/content3.png" alt="loja virtual" class="mdl-content__item__image" />
+        </article>
+      </section>
+
+      <section id="contact" class="mdl-contact">
+        <div class="mdl-contact__left">
+          <h2 class="mdl-contact__title"><span class="slim">Contate-nos</span> <span>Para adquirir planos</span></h2>
+
+          <div class="mdl-contact__text">
+            <p>Conheças nossas ideias e tenha a WHI como parceira favorita</p>
+          </div>
+        </div>
+
+        <div class="mdl-contact__topics">
+          <div class="mdl-contact__topics__item">
+            <img src="assets/images/email.svg" alt="Email" class="mdl-contact__topics__item__icon" />
+
+            <div class="mdl-contact__topics__item__description">
+              <h3 class="mdl-contact__topics__item__title">E-mail</h3>
+              <p>hosana.cmc@gmail.com</p>
+            </div>
+
+            <a class="link-full" href="mailto:hosana.cmc@gmail.com"></a>
+          </div>
+
+          <div class="mdl-contact__topics__item">
+            <img src="assets/images/about2.svg" alt="Fone com microfone" class="mdl-contact__topics__item__icon" />
+
+            <div class="mdl-contact__topics__item__description">
+              <h3 class="mdl-contact__topics__item__title">Whatsapp</h3>
+              <p>+55 71 99283-0036</p>
+            </div>
+
+            <a href="https://api.whatsapp.com/send?phone=5571992830036" class="link-full" target="_blank"></a>
+          </div>
+        </div>
       </section>
 
       <!-- fim da main do site-->
     </main>
 
-    <footer class="footer">
-      <main class="footer__main">
-        <a href="#banner" class="footer__logo"><img src="assets/images/logo-footer.png" alt="Logo WHI" /></a>
+    <footer class="mdl-footer">
+      <a href="#banner" class="mdl-footer__logo"><img src="assets/images/logo.svg" alt="Logo WHI" /></a>
 
-        <nav class="footer__nav">
-          <ul class="footer__nav__list">
-            <li class="footer__nav__list__title">Site Map</li>
-            <li class="footer__nav__list__item"><a href="#stack">Tecnologias</a></li>
-            <li class="footer__nav__list__item"><a href="highlights">Destaques</a></li>
-            <li class="footer__nav__list__item"><a href="#portfolio">Projetos</a></li>
-            <li class="footer__nav__list__item"><a href="#contact">Contato</a></li>
-          </ul>
-        </nav>
-
-        <div class="footer__contact">
-          <span class="footer__contact__title">Contato</span>
-
-          <!-- add icone de email e wpp de hosana -->
-          <a class="footer__contact__mailto" href="mailto:hosana.cmc@gmail.com">hosana.cmc@gmail.com</a>
-        </div>
-      </main>
+      <p class="mdl-footer__copyright">Todos os direitos reservados 2023 © WHI</p>
     </footer>
 
-    <script src="https://whi.dev.br/assets/js/splide.min.js"></script>
-    <script src="https://whi.dev.br/assets/js/main.js"></script>
+    <!-- <script src="https://whi.dev.br/assets/js/splide.min.js"></script>
+    <script src="https://whi.dev.br/assets/js/main.js"></script> -->
+    <script src="assets/js/splide.min.js"></script>
+    <script src="assets/js/sandwich.menu.js"></script>
+    <script src="assets/js/main.js"></script>
   </body>
 </html>

@@ -5,22 +5,24 @@
 - [x] mdl-banner;
 - [x] mdl-tecnologies;
 - [x] mdl-about;
-- [ ] mdl-content;
+- [x] mdl-content;
 - [ ] \*mdl-portfolio;
-- [ ] mdl-contact;
-- [ ] mdl-footer;
+- [x] mdl-contact;
+- [x] mdl-footer;
 - [ ] responsivo;
   - [ ] mdl-header;
   - [x] mdl-banner;
   - [x] mdl-tecnologies;
   - [x] mdl-about;
-  - [ ] mdl-content;
+  - [x] mdl-content;
   - [ ] \*mdl-portfolio;
-  - [ ] mdl-contact;
-  - [ ] mdl-footer;
+  - [x] mdl-contact;
+  - [x] mdl-footer;
 - [ ] ajuste de urls;
 - [ ] publiação;
-- [ ] animações;
-- [ ] atualizar versão online;
 
-NEXT: CONTUNUAR ESSA SEÇÃO DE CONTENT; NÃO QUERO CHAMAR ELA DE CONTENT, MAS NÃO CONSIGO PENSAR EM OUTRO NOME;
+- [ ] depois que estiver livre de novo:
+  - [ ] limpar assets antigos;
+  - [ ] area de portfolio;
+  - [ ] animações;
+  - [ ] atualizar versão online;

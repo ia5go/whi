@@ -1,0 +1,104 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+@use "../theme";
+
+.mdl-contact {
+  @include m.dis-flex($justify: space-between);
+  padding: 66px 5vw 100px 5vw;
+  gap: 3rem;
+
+  @include m.large-device-down {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  &__left {
+    width: auto;
+
+    @include m.large-device-down {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__title {
+    @extend %theme-ttl;
+    margin-bottom: 23px;
+
+    @include m.large-device-down {
+      text-align: center;
+    }
+
+    span {
+      display: block;
+      text-transform: none;
+
+      &.slim {
+        text-transform: uppercase;
+        font-size: 18px;
+        font-weight: 400;
+        color: v.$color-five;
+      }
+    }
+  }
+
+  &__text {
+    @extend %theme-paragraph;
+    width: 100%;
+    max-width: 360px;
+
+    @include m.large-device-down {
+      text-align: center;
+    }
+  }
+
+  &__topics {
+    @include m.dis-flex($justify: end, $align: center);
+    gap: 3rem;
+    width: auto;
+
+    @include m.large-device-down {
+      flex-wrap: wrap;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &__item {
+      @include m.dis-flex($align: center);
+      width: 236px;
+      position: relative;
+
+      @include m.large-device-down {
+        width: calc(50% - 1rem);
+      }
+
+      @include m.large-device-down {
+        width: 100%;
+        max-width: 270px;
+      }
+
+      &__icon {
+        width: 32px;
+        height: auto;
+        aspect-ratio: 1/1;
+        object-fit: contain;
+        object-position: center;
+        margin-right: 18px;
+      }
+
+      &__title {
+        width: calc(100% - 60px);
+
+        font-family: v.$clash-display;
+        font-weight: 600;
+        font-size: 1.3rem;
+        color: v.$color-one;
+        letter-spacing: 0.4px;
+      }
+
+      &__description {
+        @extend %theme-paragraph;
+        opacity: 0.8;
+      }
+    }
+  }
+}

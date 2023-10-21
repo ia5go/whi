@@ -1,4 +1,4 @@
-new Splide(document.querySelector(".banner"), {
+new Splide(document.querySelector(".mdl-banner"), {
   type: "loop",
   autoWidth: true,
   autoHeight: true,
@@ -7,13 +7,33 @@ new Splide(document.querySelector(".banner"), {
   arrows: false,
 }).mount();
 
-new Splide(document.querySelector(".stack__carousel"), {
+new Splide(document.querySelector(".mdl-stack__slider"), {
   type: "loop",
-  perPage: 4,
-  parMove: 4,
-  autoplay: false,
-  pagination: true,
+  perPage: 8,
+  parMove: 1,
+  gap: 52,
+  pagination: false,
   arrows: false,
-  speed: 1800,
+  autoplay: true,
+  speed: 1000,
   easing: "cubic-bezier(0.5, .6, 0.5, 1)",
+
+  breakpoints: {
+    1080: {
+      perPage: 7,
+    },
+    920: {
+      perPage: 6,
+    },
+    760: {
+      perPage: 5,
+    },
+    620: {
+      perPage: 4,
+      gap: 36,
+    },
+    500: {
+      perPage: 3,
+    },
+  },
 }).mount();

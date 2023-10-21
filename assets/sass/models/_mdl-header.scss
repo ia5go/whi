@@ -1,0 +1,64 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+@use "../theme";
+
+.mdl-header {
+  padding: 22px 5%;
+  position: relative;
+  z-index: 5;
+
+  &__nav {
+    @include m.dis-flex($justify: space-between, $align: center);
+
+    &__list {
+      @include m.dis-flex($justify: end, $align: center);
+      gap: 4.5rem;
+
+      @include m.medium-device-down {
+        display: none;
+      }
+
+      &__item {
+        a {
+          @extend %theme-paragraph;
+          color: v.$color-four;
+          transition: all ease 0.3s;
+
+          &::before {
+            content: "";
+            background-color: v.$color-two;
+            opacity: 0;
+            border-radius: 6px 6px 0 0;
+            height: 2px;
+            width: 0;
+            transition: all ease 0.4s;
+            position: absolute;
+            left: 50%;
+            bottom: -12px;
+          }
+
+          &:hover {
+            transition: all ease-out 0.3s;
+            color: v.$color-two;
+
+            &::before {
+              transition: all ease-out 0.4s;
+              opacity: 1;
+              width: 100%;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  &__logo {
+    width: 100px;
+    height: 90px;
+
+    img {
+      @include m.objConfig($fit: contain);
+    }
+  }
+}

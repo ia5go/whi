@@ -1,0 +1,25 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+@use "../theme";
+
+.mdl-footer {
+  @include m.dis-flex(column, center, center);
+  background-color: v.$color-black;
+  padding: 80px 5vw;
+
+  &__logo {
+    width: 139px;
+    height: 118px;
+    margin-bottom: 54px;
+
+    img {
+      @include m.objConfig($fit: contain);
+    }
+  }
+
+  &__copyright {
+    @extend %theme-paragraph;
+    text-align: center;
+    color: #fff;
+  }
+}

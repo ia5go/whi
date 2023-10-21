@@ -1,0 +1,25 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+// @use "../theme";
+
+.mdl-stack {
+  width: 100%;
+  background-color: v.$color-black;
+  padding: 1.75rem 5vw;
+  border-bottom: solid 10px v.$color-two;
+
+  &__item {
+    @include m.dis-flex(row, center, center);
+    height: auto;
+    aspect-ratio: 1/1;
+    background-color: #909090;
+    border-radius: 50%;
+
+    img {
+      height: 50%;
+      width: 50%;
+      object-fit: contain;
+      object-position: center;
+    }
+  }
+}

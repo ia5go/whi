@@ -6,23 +6,23 @@
 - [x] mdl-tecnologies;
 - [x] mdl-about;
 - [x] mdl-content;
-- [ ] \*mdl-portfolio;
+- [x] mdl-projects;
 - [x] mdl-contact;
 - [x] mdl-footer;
-- [ ] responsivo;
-  - [ ] mdl-header;
+- [x] responsivo;
+  - [x] mdl-header;
   - [x] mdl-banner;
   - [x] mdl-tecnologies;
   - [x] mdl-about;
   - [x] mdl-content;
-  - [ ] \*mdl-portfolio;
+  - [x] mdl-projects;
   - [x] mdl-contact;
   - [x] mdl-footer;
-- [ ] ajuste de urls;
-- [ ] publiação;
+- [x] ajuste de urls;
+- [x] publicação;
 
-- [ ] depois que estiver livre de novo:
-  - [ ] limpar assets antigos;
-  - [ ] area de portfolio;
+  - [x] limpar assets antigos;
+  - [x] area de portfolio;
+
   - [ ] animações;
   - [ ] atualizar versão online;

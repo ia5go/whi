@@ -1,0 +1,63 @@
+@use "../utilities/mixins" as m;
+@use "../utilities/variables" as v;
+@use "../theme";
+
+.mdl-projects {
+  @include m.dis-flex($direction: column, $align: center);
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+
+  &__slider {
+    width: 100%;
+  }
+
+  &__item {
+    aspect-ratio: 1/1;
+    position: relative;
+    overflow: hidden;
+
+    &__image {
+      @include m.objConfig;
+    }
+
+    &__overlay {
+      @include m.dis-flex($justify: center, $align: center);
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      inset: 0;
+      background-color: rgba(v.$color-five, 0.75);
+      transform: translateY(100%);
+      transition: all ease-in 0.4s;
+
+      :hover > & {
+        transition: all ease-in 0.4s;
+        transform: translateY(0);
+      }
+    }
+
+    &__cta {
+      @extend %theme-cta--white;
+    }
+  }
+
+  &__slider-nav {
+    margin-top: 31px;
+    width: 65px;
+
+    &__item {
+      width: 15px;
+      height: 15px;
+      border-radius: 3px;
+      background-color: v.$color-one;
+      opacity: 0.5;
+
+      &.is-active {
+        opacity: 1;
+        border: none !important;
+        outline: none;
+      }
+    }
+  }
+}

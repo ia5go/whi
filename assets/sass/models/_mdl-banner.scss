@@ -5,7 +5,6 @@
 .mdl-banner {
   position: relative;
   width: 100%;
-  margin-top: -134px;
 
   &__item {
     @include m.dis-flex($align: end, $justify: space-between);
@@ -35,11 +34,12 @@
     z-index: 5;
     height: 100%;
     width: 50%;
+    padding-bottom: 94px;
 
     @include m.medium-device-down {
       width: 100%;
-      margin-bottom: 2rem;
-      padding-top: 46px;
+      margin-bottom: 1rem;
+      padding: 46px 0 0 0;
     }
   }
 
@@ -70,10 +70,16 @@
     object-position: bottom center;
 
     @include m.medium-device-down {
-      width: 100%;
+      width: 90%;
+      margin: 0 auto;
       height: auto;
       max-height: unset;
       aspect-ratio: 329/493;
+    }
+
+    @include m.small-device-down {
+      width: auto;
+      height: 50vh;
     }
   }
 }

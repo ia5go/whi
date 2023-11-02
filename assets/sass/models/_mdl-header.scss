@@ -6,6 +6,11 @@
   padding: 22px 5%;
   position: relative;
   z-index: 5;
+  margin-bottom: -137px;
+
+  @include m.medium-device-down {
+    margin-bottom: -119px;
+  }
 
   &__nav {
     @include m.dis-flex($justify: space-between, $align: center);
@@ -55,7 +60,12 @@
 
   &__logo {
     width: 100px;
-    height: 90px;
+    height: auto;
+    aspect-ratio: 100/90;
+
+    @include m.medium-device-down {
+      width: 80px;
+    }
 
     img {
       @include m.objConfig($fit: contain);

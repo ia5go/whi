@@ -277,7 +277,7 @@ strong {
   color: #3a3a3a;
   position: relative;
 }
-.mdl-banner__cta, .mdl-about__cta {
+.mdl-banner__cta, .mdl-projects__item__cta, .mdl-about__cta {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -292,7 +292,7 @@ strong {
   color: #f89623;
   transition: all ease 0.3s;
 }
-.mdl-banner__cta:hover, .mdl-about__cta:hover {
+.mdl-banner__cta:hover, .mdl-projects__item__cta:hover, .mdl-about__cta:hover {
   background-color: #f89623;
   color: #f6f6f6;
   transition: all ease 0.3s;
@@ -304,6 +304,16 @@ strong {
 .mdl-about__cta:hover {
   background-color: #1fad90;
   color: #f6f6f6;
+  transition: all ease 0.3s;
+}
+.mdl-projects__item__cta {
+  border-color: #f6f6f6;
+  color: #f6f6f6;
+  font-weight: 600;
+}
+.mdl-projects__item__cta:hover {
+  background-color: #f6f6f6;
+  color: #3a3a3a;
   transition: all ease 0.3s;
 }
 
@@ -805,6 +815,65 @@ body {
     -o-object-position: center;
        object-position: center;
   }
+}
+
+.mdl-projects {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.mdl-projects__slider {
+  width: 100%;
+}
+.mdl-projects__item {
+  aspect-ratio: 1/1;
+  position: relative;
+  overflow: hidden;
+}
+.mdl-projects__item__image {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+.mdl-projects__item__overlay {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(58, 58, 58, 0.75);
+  transform: translateY(100%);
+  transition: all ease-in 0.4s;
+}
+:hover > .mdl-projects__item__overlay {
+  transition: all ease-in 0.4s;
+  transform: translateY(0);
+}
+.mdl-projects__slider-nav {
+  margin-top: 31px;
+  width: 65px;
+}
+.mdl-projects__slider-nav__item {
+  width: 15px;
+  height: 15px;
+  border-radius: 3px;
+  background-color: #1fad90;
+  opacity: 0.5;
+}
+.mdl-projects__slider-nav__item.is-active {
+  opacity: 1;
+  border: none !important;
+  outline: none;
 }
 
 .mdl-contact {

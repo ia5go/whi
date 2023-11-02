@@ -9,6 +9,14 @@
     color: v.$color-black;
     text-transform: uppercase;
 
+    @include m.medium-device-down {
+      font-size: 1.75rem;
+    }
+
+    @include m.medium-device-down {
+      font-size: 1.5rem;
+    }
+
     span {
       color: v.$color-one;
     }
@@ -17,6 +25,10 @@
       @extend %theme-ttl;
       color: v.$color-white;
       font-size: 3.3rem;
+
+      @include m.medium-device-down {
+        font-size: 2rem;
+      }
     }
 
     &--spn-white {

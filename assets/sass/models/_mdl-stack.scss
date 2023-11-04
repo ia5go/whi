@@ -11,6 +11,10 @@
   background-color: transparent;
   padding: 0rem 2.5vw;
 
+  @include m.small-device-down {
+    margin-top: -80px;
+  }
+
   .splide__track {
     max-width: 1080px;
     margin: 0 auto;
@@ -32,6 +36,7 @@
 
     @include m.small-device-down {
       margin: 0 14px;
+      width: 52px;
     }
 
     img {

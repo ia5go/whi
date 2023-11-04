@@ -54,6 +54,12 @@
         position: absolute;
         left: calc(100% + 56px);
         top: 50%;
+
+        @include m.small-device-down {
+          left: 0;
+          top: unset;
+          bottom: -8px;
+        }
       }
     }
   }
@@ -87,6 +93,12 @@
 
       @include m.medium-device-down {
         font-size: 1.4rem;
+      }
+    }
+
+    &:first-of-type {
+      @include m.medium-device-down {
+        margin-top: 1rem;
       }
     }
 
